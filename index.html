@@ -116,14 +116,15 @@ a{text-decoration:none;color:inherit}
 /* ═══════════════════════════════════════════
    STATS PILLS
 ═══════════════════════════════════════════ */
-.hero-pills-row{padding:28px 0 40px;position:relative;z-index:2;overflow:hidden}
-.hero-pills-row::before,.hero-pills-row::after{content:'';position:absolute;top:0;bottom:0;width:48px;z-index:3;pointer-events:none}
-.hero-pills-row::before{left:0;background:linear-gradient(to right,#1a1a5e,transparent)}
-.hero-pills-row::after{right:0;background:linear-gradient(to left,#1a1a5e,transparent)}
-.stats-pills{display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:9px;padding:4px 48px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
-.stats-pills::-webkit-scrollbar{display:none}
-@media(min-width:820px){.stats-pills{flex-wrap:wrap;justify-content:center;padding:4px 24px;overflow-x:visible}}
-.stat-pill{display:inline-flex;align-items:center;flex-shrink:0;gap:7px;background:rgba(244,162,97,.12);border:1px solid rgba(244,162,97,.35);border-radius:50px;padding:7px 16px;font-size:.82rem;font-weight:600;color:#f4c28a;box-shadow:0 0 14px rgba(244,162,97,.18),inset 0 0 8px rgba(244,162,97,.05);white-space:nowrap}
+@keyframes pills-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.hero-pills-row{padding:28px 0 40px;position:relative;z-index:2}
+.pills-track-wrap{position:relative;overflow:hidden}
+.pills-track-wrap::before,.pills-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:3;pointer-events:none}
+.pills-track-wrap::before{left:0;background:linear-gradient(to right,#1a1a5e,transparent)}
+.pills-track-wrap::after{right:0;background:linear-gradient(to left,#1a1a5e,transparent)}
+.pills-track{display:flex;gap:10px;padding:6px 0;width:max-content;animation:pills-scroll 24s linear infinite}
+.pills-track:hover{animation-play-state:paused}
+.stat-pill{display:inline-flex;align-items:center;flex-shrink:0;gap:7px;background:rgba(244,162,97,.12);border:1px solid rgba(244,162,97,.35);border-radius:50px;padding:8px 18px;font-size:.83rem;font-weight:600;color:#f4c28a;box-shadow:0 0 14px rgba(244,162,97,.18),inset 0 0 8px rgba(244,162,97,.05);white-space:nowrap;cursor:default}
 .stat-pill strong{color:#f4a261}
 .stats-wave{background:#1a1a5e;line-height:0;margin-top:-2px}
 .stats-wave svg{display:block}
@@ -204,17 +205,11 @@ a{text-decoration:none;color:inherit}
 .andrea-list{list-style:none;display:flex;flex-direction:column;gap:10px}
 .andrea-list li{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.82);font-size:.9rem}
 .al-check{width:20px;height:20px;flex-shrink:0;margin-top:1px;background:rgba(61,122,85,.35);border:1px solid var(--green-lt);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;color:#a7f3d0}
-/* Video thumb */
-.video-thumb-wrap{position:relative;border-radius:var(--rl);overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.5);aspect-ratio:9/16;max-height:460px;max-width:270px;margin:0 auto;background:#0a0a1e}
-.video-thumb-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;opacity:.65;transition:opacity .3s}
-.video-thumb-wrap:hover img{opacity:.8}
-.video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:rgba(226,113,90,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(226,113,90,.5);transition:transform .25s,background .25s;cursor:pointer}
-.video-thumb-wrap:hover .video-play{transform:translate(-50%,-50%) scale(1.1);background:var(--coral)}
-.video-play svg{margin-left:3px}
-.video-soon{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(10,10,30,.8)}
-.vs-icon{font-size:2rem}
-.vs-text{font-size:.76rem;font-weight:600;color:rgba(255,255,255,.55);text-align:center;line-height:1.5}
-.video-label{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center}
+/* YouTube embed 16:9 */
+.yt-embed-wrap{position:relative;width:100%;border-radius:var(--rl);overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.5);background:#0a0a1e}
+.yt-embed-wrap::before{content:'';display:block;padding-top:56.25%}
+.yt-embed-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+.video-label{display:flex;justify-content:center}
 .video-label-inner{background:rgba(0,0,0,.65);backdrop-filter:blur(8px);border-radius:50px;padding:5px 14px;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.8)}
 
 /* ═══════════════════════════════════════════
@@ -513,7 +508,7 @@ a{text-decoration:none;color:inherit}
           para a <span class="hi">sua roda.</span>
         </h1>
         <p class="hero-sub">
-          Uma coletânea viva de dinâmicas, jogos e brincadeiras de roda — afro-brasileiras, indígenas e europeias — para criar vivências que ficam na memória de quem brinca.
+          Uma coletânea viva de dinâmicas, jogos e brincadeiras de roda afro-indígenas brasileiras — para criar vivências que ficam na memória de quem brinca.
         </p>
         <ul class="hero-bullets">
           <li class="hero-bullet"><div class="hb-dot">✓</div> As principais brincadeiras da cultura popular, contextualizadas e prontas para usar</li>
@@ -534,13 +529,21 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
     <div class="hero-pills-row">
-      <div class="stats-pills">
-        <div class="stat-pill">🥁 <strong>+30</strong> brincadeiras ancestrais</div>
-        <div class="stat-pill">🌍 4 categorias culturais</div>
-        <div class="stat-pill">🎬 Vídeos explicativos inclusos</div>
-        <div class="stat-pill">🎮 Trilha gamificada</div>
-        <div class="stat-pill">📱 Acessa pelo link — login exclusivo e personalizado</div>
-        <div class="stat-pill">🎁 eBook bônus incluso</div>
+      <div class="pills-track-wrap">
+        <div class="pills-track">
+          <div class="stat-pill">🥁 <strong>+30</strong> brincadeiras ancestrais</div>
+          <div class="stat-pill">🌍 4 categorias culturais</div>
+          <div class="stat-pill">🎬 Vídeos explicativos inclusos</div>
+          <div class="stat-pill">🎮 Trilha gamificada</div>
+          <div class="stat-pill">📱 Acessa pelo link — login exclusivo e personalizado</div>
+          <div class="stat-pill">🎁 eBook bônus incluso</div>
+          <div class="stat-pill">🥁 <strong>+30</strong> brincadeiras ancestrais</div>
+          <div class="stat-pill">🌍 4 categorias culturais</div>
+          <div class="stat-pill">🎬 Vídeos explicativos inclusos</div>
+          <div class="stat-pill">🎮 Trilha gamificada</div>
+          <div class="stat-pill">📱 Acessa pelo link — login exclusivo e personalizado</div>
+          <div class="stat-pill">🎁 eBook bônus incluso</div>
+        </div>
       </div>
     </div>
   </div>
@@ -677,15 +680,11 @@ a{text-decoration:none;color:inherit}
         </ul>
       </div>
       <div class="reveal d1">
-        <div class="video-thumb-wrap">
-          <img src="images/tatu-noite.jpg" alt="Vídeo explicativo" />
-          <div class="video-soon">
-            <div class="vs-icon">🎬</div>
-            <div class="vs-text">Vídeos disponíveis<br>no lançamento</div>
-          </div>
-          <div class="video-label">
-            <div class="video-label-inner">Prof. Andréa Penha — Vídeos explicativos</div>
-          </div>
+        <div class="yt-embed-wrap">
+          <iframe src="https://www.youtube.com/embed/kJDjKJaqn7w" title="Prof. Andréa Penha — Vídeos explicativos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-label" style="margin-top:10px;position:static;display:flex;justify-content:center">
+          <div class="video-label-inner">Prof. Andréa Penha — Vídeos explicativos</div>
         </div>
       </div>
     </div>
@@ -726,9 +725,9 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="how-step reveal d2">
         <div class="how-num">3</div>
-        <div class="how-step-icon">🔐</div>
-        <h3>Você está dentro do app</h3>
-        <p>Troque a senha nas configurações do perfil e defina sua senha pessoal.</p>
+        <div class="how-step-icon">🎉</div>
+        <h3>Pronto! Você está dentro.</h3>
+        <p>Troque a senha nas configurações do perfil e comece a explorar as brincadeiras.</p>
       </div>
       <div class="how-step reveal d3">
         <div class="how-num">4</div>
@@ -767,7 +766,7 @@ a{text-decoration:none;color:inherit}
           <h3>Animadores Culturais e Terapeutas</h3>
         </div>
         <div class="who-card-body">
-          <div class="who-card-quote">"Preciso de um repertório que respeite a sabedoria ancestral e caiba no meu celular na hora da roda."</div>
+          <div class="who-card-quote">"Quero brincadeiras e dinâmicas divertidas para criar entrosamento de verdade."</div>
           <p>Uma coletânea curada, sempre no bolso, com contexto histórico de cada brincadeira e vídeos para aprofundar. Acessa pelo link, sem baixar nada.</p>
         </div>
       </div>
@@ -997,7 +996,7 @@ a{text-decoration:none;color:inherit}
       <div class="kawiza-bio">
         <h3>A produtora por trás do <span class="brand-tatu">Tatu</span><span class="brand-ape">apé</span> App</h3>
         <p>A <strong>Kawiza — Educação, Cultura e Tecnologia</strong> é uma empresa fundada por <strong>Quemuel Felipe</strong> e <strong>Andréa Penha</strong>, um casal que acredita que a união da cultura e da tecnologia é uma parceria potencializadora no acesso à educação.</p>
-        <p>O <strong>Tatuapé App</strong> é um projeto 100% independente — sem financiamento público ou privado. Nasceu da iniciativa de Quemuel e Andréa, e se sustenta exclusivamente pelas vendas. É cultura popular sendo levada adiante por quem acredita nela.</p>
+        <p>O <strong>Tatuapé App</strong> é um projeto 100% independente — sem financiamento público ou privado, sem patrocinadores. Se sustenta exclusivamente pelas vendas, e cada compra é o que torna esse trabalho possível.</p>
         <div class="kawiza-tags">
           <span class="kawiza-tag">Educação Popular</span>
           <span class="kawiza-tag">Cultura Afro-Brasileira</span>
