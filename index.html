@@ -112,16 +112,17 @@ a{text-decoration:none;color:inherit}
 .speech-dot{width:8px;height:8px;border-radius:50%;background:var(--coral);display:inline-block;margin-right:5px}
 .hero-speech p{font-size:.75rem;font-weight:600;color:var(--text);line-height:1.45}
 .hero-speech .hi{font-weight:800}
-.hero-wave{margin-top:-2px;line-height:0}
-.hero-wave svg{display:block}
 
 /* ═══════════════════════════════════════════
    STATS PILLS
 ═══════════════════════════════════════════ */
-.stats-strip{background:var(--white);padding:22px}
+.stats-strip{background:#1a1a5e;padding:28px 22px 0;margin-top:-2px}
+.stats-strip-inner{padding-bottom:36px}
 .stats-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;max-width:1080px;margin:0 auto}
-.stat-pill{display:inline-flex;align-items:center;gap:7px;background:var(--bg);border-radius:50px;padding:7px 16px;font-size:.82rem;font-weight:600;color:var(--text-md);border:1px solid rgba(0,0,0,.05)}
-.stat-pill strong{color:var(--coral)}
+.stat-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(244,162,97,.12);border:1px solid rgba(244,162,97,.35);border-radius:50px;padding:7px 16px;font-size:.82rem;font-weight:600;color:#f4c28a;box-shadow:0 0 14px rgba(244,162,97,.18),inset 0 0 8px rgba(244,162,97,.05)}
+.stat-pill strong{color:#f4a261}
+.stats-wave{background:#1a1a5e;line-height:0;margin-top:-1px}
+.stats-wave svg{display:block}
 
 /* ═══════════════════════════════════════════
    SECTIONS BASE
@@ -390,9 +391,9 @@ a{text-decoration:none;color:inherit}
 .pricing-card{max-width:490px;margin:0 auto;background:var(--white);border-radius:var(--rl);padding:34px;box-shadow:0 28px 80px rgba(0,0,0,.45);position:relative}
 .pricing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--coral),var(--coral-lt));border-radius:var(--rl) var(--rl) 0 0}
 .price-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--coral),var(--coral-lt));color:#fff;font-size:.78rem;font-weight:700;padding:5px 14px;border-radius:50px;margin-bottom:20px}
-.price-checklist{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
-.price-checklist li{display:flex;align-items:flex-start;gap:9px;font-size:.89rem;color:var(--text-md)}
-.ck{width:18px;height:18px;flex-shrink:0;margin-top:1px;background:var(--coral);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.58rem;color:#fff;font-weight:700}
+.price-checklist{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:18px}
+.price-checklist li{display:flex;align-items:flex-start;gap:10px;font-size:.89rem;color:var(--text-md);line-height:1.5}
+.ck{width:20px;height:20px;min-width:20px;flex-shrink:0;margin-top:1px;background:var(--coral);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;color:#fff;font-weight:700}
 .bonus-row{background:linear-gradient(135deg,rgba(45,94,62,.08),rgba(82,183,136,.1));border:1px dashed var(--green);border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:9px;margin:16px 0}
 .bonus-row-icon{font-size:1.3rem}
 .bonus-row-txt{font-size:.78rem;color:var(--green-dk);font-weight:600;line-height:1.4}
@@ -503,7 +504,6 @@ a{text-decoration:none;color:inherit}
   <div class="hero-inner">
     <div class="hero-grid container">
       <div class="hero-copy">
-        <div class="hero-badge">🌿 Coletânea de brincadeiras da cultura popular afro-indígena brasileira</div>
         <h1 class="hero-title">
           Da cultura popular<br>
           para a <span class="hi">sua roda.</span>
@@ -533,12 +533,6 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
-<div class="hero-wave">
-  <svg viewBox="0 0 1200 52" preserveAspectRatio="none" style="display:block">
-    <path d="M0,52 C250,8 450,48 700,22 C900,4 1100,46 1200,16 L1200,52 Z" fill="#fff"/>
-  </svg>
-</div>
-
 <!-- ── STATS PILLS ──────────────────── -->
 <div class="stats-strip">
   <div class="stats-pills">
@@ -546,9 +540,12 @@ a{text-decoration:none;color:inherit}
     <div class="stat-pill">🌍 4 categorias culturais</div>
     <div class="stat-pill">🎬 Vídeos explicativos inclusos</div>
     <div class="stat-pill">🎮 Trilha gamificada</div>
-    <div class="stat-pill">📶 Funciona offline</div>
+    <div class="stat-pill">📱 Sem baixar — acessa pelo link</div>
     <div class="stat-pill">🎁 eBook bônus incluso</div>
   </div>
+</div>
+<div class="stats-wave">
+  <svg viewBox="0 0 1200 52" preserveAspectRatio="none"><path d="M0,0 C300,52 600,0 900,36 C1050,52 1150,14 1200,28 L1200,52 L0,52 Z" fill="#f7f4f1"/></svg>
 </div>
 
 <!-- ── OPORTUNIDADE ─────────────────── -->
@@ -649,9 +646,9 @@ a{text-decoration:none;color:inherit}
         <p>Ganhe XP, desbloqueie conquistas e avance na trilha.</p>
       </div>
       <div class="feat-mini reveal d3">
-        <div class="feat-mini-icon">📶</div>
-        <h4>Funciona offline</h4>
-        <p>Sem sinal? Apé não abandona. Tudo disponível offline.</p>
+        <div class="feat-mini-icon">📱</div>
+        <h4>App web — sem baixar nada</h4>
+        <p>Acesse pelo link direto no celular. Sem App Store, sem Google Play.</p>
       </div>
     </div>
   </div>
@@ -770,7 +767,7 @@ a{text-decoration:none;color:inherit}
         </div>
         <div class="who-card-body">
           <div class="who-card-quote">"Preciso de um repertório que respeite a sabedoria ancestral e caiba no meu celular na hora da roda."</div>
-          <p>Uma coletânea curada, sempre no bolso, com contexto histórico de cada brincadeira e vídeos para aprofundar. Funciona offline.</p>
+          <p>Uma coletânea curada, sempre no bolso, com contexto histórico de cada brincadeira e vídeos para aprofundar. Acessa pelo link, sem baixar nada.</p>
         </div>
       </div>
       <div class="who-card who-card--familia reveal d2">
@@ -854,9 +851,9 @@ a{text-decoration:none;color:inherit}
             </div>
             <div class="feat-txt">
               <div class="feat-num">04</div>
-              <h3>App PWA — funciona em qualquer dispositivo</h3>
-              <p>Acesse pelo celular, tablet ou computador. Instale como app na tela inicial. Funciona offline — leve para a roda sem precisar de internet ou lojas de aplicativo.</p>
-              <span class="feat-tag">Celular · Tablet · Computador · Offline</span>
+              <h3>App web — sem baixar, sem lojas de aplicativo</h3>
+              <p>Acesse pelo link diretamente no celular, tablet ou computador. Se quiser, instale na tela inicial como um app de verdade — sem passar pela App Store ou Google Play.</p>
+              <span class="feat-tag">Celular · Tablet · Computador · Qualquer dispositivo</span>
             </div>
           </div>
         </div>
@@ -912,7 +909,7 @@ a{text-decoration:none;color:inherit}
           </div>
         </div>
         <div class="proj-info">
-          <h4>Prof. Andréa Penha apresenta a coletânea</h4>
+          <h4>Como e por que surgiu o Tatuapé App</h4>
           <p>A educadora por trás dos vídeos conta sobre o projeto e as brincadeiras.</p>
         </div>
       </div>
@@ -943,12 +940,12 @@ a{text-decoration:none;color:inherit}
       <div class="apeapp-copy reveal d1">
         <span class="eyebrow">O app na prática</span>
         <h2 class="h2">Apé te guia.<br><span class="hi">Você descobre.</span></h2>
-        <p>O Tatuapé foi desenhado para ser intuitivo e bonito. Abra no celular, escolha uma brincadeira, assista ao vídeo da Prof. Andréa, faça o quiz e leve para a sua roda.</p>
+        <p>O Tatuapé foi desenhado para ser intuitivo e bonito. Abra no celular, escolha uma brincadeira — e antes de jogar, você mergulha nas raízes ancestrais dela: de onde veio, qual a matriz cultural, como ela se transforma dependendo do contexto. Depois assiste ao vídeo da Prof. Andréa, faz o quiz e leva para a sua roda.</p>
         <ul class="apeapp-list">
-          <li><div class="al-check">✓</div> Interface adaptada para celular, tablet e desktop</li>
-          <li><div class="al-check">✓</div> Progresso salvo automaticamente — continue de onde parou</li>
-          <li><div class="al-check">✓</div> Instale como app sem precisar de loja de aplicativos</li>
-          <li><div class="al-check">✓</div> Novas brincadeiras e atualizações ao longo do ano</li>
+          <li><div class="al-check">✓</div> Contexto histórico e cultural de cada brincadeira</li>
+          <li><div class="al-check">✓</div> Vídeo explicativo, quiz de memória e dicas de facilitador</li>
+          <li><div class="al-check">✓</div> Progresso salvo — continue de onde parou</li>
+          <li><div class="al-check">✓</div> Instale na tela inicial sem precisar de loja de aplicativos</li>
         </ul>
         <a href="#offer" class="btn-hero">Acessar o app →</a>
       </div>
@@ -998,8 +995,8 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="kawiza-bio">
         <h3>A produtora por trás do <span class="brand-tatu">Tatu</span><span class="brand-ape">apé</span></h3>
-        <p>A <strong>Kawiza</strong> nasceu da convicção de que tecnologia e cultura popular não são opostos — são parceiros. Trabalhamos no cruzamento entre educação, arte e inovação para criar ferramentas que respeitem a inteligência dos educadores e a riqueza do patrimônio imaterial brasileiro.</p>
-        <p>O Tatuapé começou como uma coletânea de dinâmicas da cultura popular e cresceu para um app gamificado com vídeos explicativos, trilha de aprendizagem e tudo que um facilitador precisa para criar vivências de verdade.</p>
+        <p>A <strong>Kawiza — Educação, Cultura e Tecnologia</strong> é uma empresa fundada por <strong>Quemuel Felipe</strong> e <strong>Andréa Penha</strong>, um casal que acredita que a união da cultura e da tecnologia é uma parceria potencializadora no acesso à educação.</p>
+        <p>O Tatuapé nasceu dessa convicção: transformar o patrimônio vivo das brincadeiras de roda num app gamificado, com vídeos, contexto histórico e tudo que um educador ou facilitador precisa para criar vivências de verdade.</p>
         <div class="kawiza-tags">
           <span class="kawiza-tag">Educação Popular</span>
           <span class="kawiza-tag">Cultura Afro-Brasileira</span>
@@ -1007,13 +1004,6 @@ a{text-decoration:none;color:inherit}
           <span class="kawiza-tag">Tecnologia Educacional</span>
           <span class="kawiza-tag">Gamificação Cultural</span>
         </div>
-      </div>
-    </div>
-    <div class="andrea-card reveal d1">
-      <div class="andrea-avatar">🥁</div>
-      <div>
-        <h4>Prof. Andréa Penha — Educadora e especialista em cultura popular</h4>
-        <p>Responsável pelos vídeos explicativos de cada brincadeira da coletânea — com experiência em facilitação de rodas, música popular, percussão corporal e educação afro-indígena brasileira.</p>
       </div>
     </div>
   </div>
@@ -1035,7 +1025,7 @@ a{text-decoration:none;color:inherit}
         <li><span class="ck">✓</span> <strong>Vídeos explicativos da Prof. Andréa Penha</strong> para cada brincadeira</li>
         <li><span class="ck">✓</span> Músicas, toques, ritmos e dicas de aplicação</li>
         <li><span class="ck">✓</span> Trilha gamificada, quiz de memória e conquistas</li>
-        <li><span class="ck">✓</span> Funciona offline em qualquer dispositivo</li>
+        <li><span class="ck">✓</span> App web — acessa pelo link, sem App Store ou Google Play</li>
         <li><span class="ck">✓</span> Novas brincadeiras e atualizações durante o ano</li>
       </ul>
       <div class="bonus-row">
@@ -1099,8 +1089,8 @@ a{text-decoration:none;color:inherit}
         <div class="faq-a">A maioria das dinâmicas inclui variações para funcionar desde a primeira infância (3 anos) até grupos de adultos. O app indica o contexto ideal de cada brincadeira e os vídeos da Prof. Andréa mostram como adaptar para diferentes idades e realidades.</div>
       </div>
       <div class="faq-item reveal d1">
-        <div class="faq-q">O app funciona sem internet? <span class="faq-arr">+</span></div>
-        <div class="faq-a">Sim. O Tatuapé é um PWA com suporte offline. Após o primeiro carregamento, as brincadeiras ficam disponíveis sem conexão — perfeito para usar em parques, escolas rurais, comunidades ou qualquer lugar sem sinal.</div>
+        <div class="faq-q">Preciso baixar o app em alguma loja? <span class="faq-arr">+</span></div>
+        <div class="faq-a">Não. O Tatuapé é um app web — você acessa direto pelo link, em qualquer celular, tablet ou computador, sem passar pela App Store ou Google Play. Se quiser, pode instalar na tela inicial do seu celular com um toque — e vai funcionar como um app nativo, com ícone e tudo.</div>
       </div>
       <div class="faq-item reveal d2">
         <div class="faq-q">E se eu não gostar? Como funciona a garantia? <span class="faq-arr">+</span></div>
