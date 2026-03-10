@@ -116,12 +116,11 @@ a{text-decoration:none;color:inherit}
 /* ═══════════════════════════════════════════
    STATS PILLS
 ═══════════════════════════════════════════ */
-.stats-strip{background:#1a1a5e;padding:28px 22px 0;margin-top:-2px}
-.stats-strip-inner{padding-bottom:36px}
+.hero-pills-row{padding:28px 24px 40px;position:relative;z-index:2}
 .stats-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;max-width:1080px;margin:0 auto}
 .stat-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(244,162,97,.12);border:1px solid rgba(244,162,97,.35);border-radius:50px;padding:7px 16px;font-size:.82rem;font-weight:600;color:#f4c28a;box-shadow:0 0 14px rgba(244,162,97,.18),inset 0 0 8px rgba(244,162,97,.05)}
 .stat-pill strong{color:#f4a261}
-.stats-wave{background:#1a1a5e;line-height:0;margin-top:-1px}
+.stats-wave{background:#1a1a5e;line-height:0;margin-top:-2px}
 .stats-wave svg{display:block}
 
 /* ═══════════════════════════════════════════
@@ -355,10 +354,10 @@ a{text-decoration:none;color:inherit}
 .bonus-list{list-style:none;display:flex;flex-direction:column;gap:9px}
 .bonus-list li{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.85);font-size:.9rem}
 .bl-check{width:18px;height:18px;flex-shrink:0;border:1px solid var(--green-lt);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.58rem;color:#a7f3d0;background:rgba(82,183,136,.15)}
-.bonus-visual-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(8px);border-radius:var(--rl);padding:22px;text-align:center;animation:float 7s ease-in-out infinite .5s}
+.bonus-visual-card{background:#fff;border:none;border-radius:var(--rl);padding:22px;text-align:center;animation:float 7s ease-in-out infinite .5s;box-shadow:0 12px 40px rgba(0,0,0,.25)}
 .bonus-cover{width:100%;height:190px;object-fit:cover;border-radius:12px;margin-bottom:14px}
-.bonus-visual-card h4{font-size:.93rem;font-weight:700;color:#fff;margin-bottom:4px}
-.bonus-visual-card p{font-size:.76rem;color:rgba(255,255,255,.5)}
+.bonus-visual-card h4{font-size:.93rem;font-weight:700;color:var(--text);margin-bottom:4px}
+.bonus-visual-card p{font-size:.76rem;color:var(--text-lt)}
 .bonus-pill{display:inline-block;margin-top:10px;background:rgba(167,243,208,.15);border:1px solid rgba(167,243,208,.3);color:#a7f3d0;font-size:.74rem;font-weight:700;padding:4px 12px;border-radius:50px}
 
 /* ═══════════════════════════════════════════
@@ -529,21 +528,18 @@ a{text-decoration:none;color:inherit}
           <p><span class="speech-dot"></span>Oi! Sou o <span class="hi">Apé</span> e te guio no caminho das brincadeiras de roda da cultura popular.</p>
         </div>
       </div>
+    <div class="hero-pills-row">
+      <div class="stats-pills">
+        <div class="stat-pill">🥁 <strong>+30</strong> brincadeiras ancestrais</div>
+        <div class="stat-pill">🌍 4 categorias culturais</div>
+        <div class="stat-pill">🎬 Vídeos explicativos inclusos</div>
+        <div class="stat-pill">🎮 Trilha gamificada</div>
+        <div class="stat-pill">📱 Acessa pelo link — login exclusivo e personalizado</div>
+        <div class="stat-pill">🎁 eBook bônus incluso</div>
+      </div>
     </div>
   </div>
 </section>
-
-<!-- ── STATS PILLS ──────────────────── -->
-<div class="stats-strip">
-  <div class="stats-pills">
-    <div class="stat-pill">🥁 <strong>+30</strong> brincadeiras ancestrais</div>
-    <div class="stat-pill">🌍 4 categorias culturais</div>
-    <div class="stat-pill">🎬 Vídeos explicativos inclusos</div>
-    <div class="stat-pill">🎮 Trilha gamificada</div>
-    <div class="stat-pill">📱 Sem baixar — acessa pelo link</div>
-    <div class="stat-pill">🎁 eBook bônus incluso</div>
-  </div>
-</div>
 <div class="stats-wave">
   <svg viewBox="0 0 1200 52" preserveAspectRatio="none"><path d="M0,0 C300,52 600,0 900,36 C1050,52 1150,14 1200,28 L1200,52 L0,52 Z" fill="#f7f4f1"/></svg>
 </div>
@@ -726,8 +722,8 @@ a{text-decoration:none;color:inherit}
       <div class="how-step reveal d2">
         <div class="how-num">3</div>
         <div class="how-step-icon">🔐</div>
-        <h3>Troque a senha</h3>
-        <p>Nas configurações do perfil, defina sua senha pessoal. Feito — você está dentro.</p>
+        <h3>Você está dentro do app</h3>
+        <p>Troque a senha nas configurações do perfil e defina sua senha pessoal.</p>
       </div>
       <div class="how-step reveal d3">
         <div class="how-num">4</div>
@@ -994,9 +990,9 @@ a{text-decoration:none;color:inherit}
         <div class="kawiza-brand">Kawiza<span>Educação, Cultura e Tecnologia</span></div>
       </div>
       <div class="kawiza-bio">
-        <h3>A produtora por trás do <span class="brand-tatu">Tatu</span><span class="brand-ape">apé</span></h3>
+        <h3>A produtora por trás do <span class="brand-tatu">Tatu</span><span class="brand-ape">apé</span> App</h3>
         <p>A <strong>Kawiza — Educação, Cultura e Tecnologia</strong> é uma empresa fundada por <strong>Quemuel Felipe</strong> e <strong>Andréa Penha</strong>, um casal que acredita que a união da cultura e da tecnologia é uma parceria potencializadora no acesso à educação.</p>
-        <p>O Tatuapé nasceu dessa convicção: transformar o patrimônio vivo das brincadeiras de roda num app gamificado, com vídeos, contexto histórico e tudo que um educador ou facilitador precisa para criar vivências de verdade.</p>
+        <p>O <strong>Tatuapé App</strong> é um projeto 100% independente — sem financiamento público ou privado. Nasceu da iniciativa de Quemuel e Andréa, e se sustenta exclusivamente pelas vendas. É cultura popular sendo levada adiante por quem acredita nela.</p>
         <div class="kawiza-tags">
           <span class="kawiza-tag">Educação Popular</span>
           <span class="kawiza-tag">Cultura Afro-Brasileira</span>
@@ -1207,13 +1203,30 @@ document.querySelectorAll('.reveal').forEach(el=>{
     dotsWrap.appendChild(d);
   });
   function go(n){
-    cur=n;
-    carousel.style.transform=`translateX(-${n*100}%)`;
-    dotsWrap.querySelectorAll('.feat-dot').forEach((d,i)=>d.classList.toggle('active',i===n));
+    cur=(n+slides.length)%slides.length;
+    carousel.style.transform=`translateX(-${cur*100}%)`;
+    dotsWrap.querySelectorAll('.feat-dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
   }
-  function play(){timer=setInterval(()=>go((cur+1)%slides.length),3200);}
+  function play(){timer=setInterval(()=>go(cur+1),3200);}
   carousel.addEventListener('mouseenter',()=>clearInterval(timer));
   carousel.addEventListener('mouseleave',play);
+  // Touch swipe
+  let tx=0;
+  carousel.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;clearInterval(timer);},{passive:true});
+  carousel.addEventListener('touchend',e=>{
+    const d=tx-e.changedTouches[0].clientX;
+    if(Math.abs(d)>40)go(d>0?cur+1:cur-1);
+    play();
+  },{passive:true});
+  // Mouse drag
+  let mx=0,drag=false;
+  carousel.addEventListener('mousedown',e=>{mx=e.clientX;drag=true;clearInterval(timer);});
+  document.addEventListener('mouseup',e=>{
+    if(!drag)return;drag=false;
+    const d=mx-e.clientX;
+    if(Math.abs(d)>40)go(d>0?cur+1:cur-1);
+    play();
+  });
   play();
 })();
 
