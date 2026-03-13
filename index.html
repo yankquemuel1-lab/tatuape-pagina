@@ -316,20 +316,32 @@ a{text-decoration:none;color:inherit}
 /* ═══════════════════════════════════════════
    VÍDEOS DO PROJETO
 ═══════════════════════════════════════════ */
-.section-proj-videos{background:var(--white)}
-.proj-videos-header{text-align:center;margin-bottom:48px}
-.proj-videos-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.proj-video-card{border-radius:var(--rl);overflow:hidden;box-shadow:var(--s2);transition:transform .35s,box-shadow .35s}
-.proj-video-card:hover{transform:translateY(-6px);box-shadow:var(--s3)}
-.proj-thumb{position:relative;background:#0a0a1e;aspect-ratio:16/9;overflow:hidden}
+.section-proj-videos{background:linear-gradient(145deg,#0c1a10 0%,#1a2e1e 55%,#0a0d1e 100%);overflow:hidden}
+.proj-videos-header{text-align:center;margin-bottom:52px}
+.proj-videos-header .eyebrow{color:#a7f3d0}
+.proj-videos-header .h2{color:#fff}
+.proj-videos-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;max-width:500px;margin:0 auto}
+.proj-video-card{position:relative;border-radius:22px;overflow:visible;box-shadow:none;animation:pvc-float 6s ease-in-out infinite}
+.proj-video-card.d1{animation-delay:1.3s}
+.proj-video-card:hover{transform:none;box-shadow:none}
+/* glow aura */
+.proj-video-card::before{content:'';position:absolute;inset:-18px;border-radius:42px;z-index:0;pointer-events:none;animation:pvc-glow 4s ease-in-out infinite}
+.proj-video-card:nth-child(1)::before{background:radial-gradient(ellipse at 50% 65%,rgba(226,113,90,.6) 0%,transparent 65%)}
+.proj-video-card:nth-child(2)::before{background:radial-gradient(ellipse at 50% 65%,rgba(82,183,136,.6) 0%,transparent 65%);animation-delay:2s}
+.proj-thumb{position:relative;background:#040810;aspect-ratio:9/16;overflow:hidden;border-radius:18px 18px 0 0;z-index:1;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.proj-thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+/* shine top-left */
+.proj-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.1) 0%,transparent 30%);pointer-events:none;z-index:2;border-radius:18px 18px 0 0}
 .proj-thumb img{width:100%;height:100%;object-fit:cover;object-position:top;opacity:.58}
 .proj-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(226,113,90,.9);box-shadow:0 4px 24px rgba(226,113,90,.5);transition:transform .25s,background .25s}
 .proj-video-card:hover .proj-play{transform:translate(-50%,-50%) scale(1.12);background:var(--coral)}
 .proj-play svg{margin-left:3px}
 .proj-soon{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.58);backdrop-filter:blur(6px);border-radius:50px;padding:3px 10px;font-size:.66rem;font-weight:600;color:rgba(255,255,255,.7)}
-.proj-info{padding:18px 20px;background:var(--white)}
-.proj-info h4{font-size:.95rem;font-weight:700;margin-bottom:3px}
-.proj-info p{font-size:.8rem;color:var(--text-lt)}
+.proj-info{position:relative;z-index:1;padding:14px 16px;background:rgba(255,255,255,.07);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.11);border-top:none;border-radius:0 0 18px 18px}
+.proj-info h4{font-size:.88rem;font-weight:700;margin-bottom:3px;color:#fff}
+.proj-info p{font-size:.75rem;color:rgba(255,255,255,.52);line-height:1.5}
+@keyframes pvc-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pvc-glow{0%,100%{opacity:.65;transform:scale(1)}50%{opacity:1;transform:scale(1.07)}}
 
 /* ═══════════════════════════════════════════
    APÉ COM CELULAR
@@ -946,7 +958,7 @@ a{text-decoration:none;color:inherit}
     <div class="proj-videos-grid">
       <div class="proj-video-card reveal">
         <div class="proj-thumb">
-          <iframe src="https://www.youtube.com/embed/-NvWgfn8xWU" title="Como e por que surgiu o Tatuapé App" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border-radius:var(--rl) var(--rl) 0 0"></iframe>
+          <iframe src="https://www.youtube.com/embed/-NvWgfn8xWU" title="Como e por que surgiu o Tatuapé App" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="proj-info">
           <h4>Como e por que surgiu o Tatuapé App</h4>
@@ -955,7 +967,7 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="proj-video-card reveal d1">
         <div class="proj-thumb">
-          <iframe src="https://www.youtube.com/embed/_SBZkUpDyfE" title="Apé te apresenta o Tatuapé" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border-radius:var(--rl) var(--rl) 0 0"></iframe>
+          <iframe src="https://www.youtube.com/embed/_SBZkUpDyfE" title="Apé te apresenta o Tatuapé" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="proj-info">
           <h4>Apé te apresenta o Tatuapé</h4>
