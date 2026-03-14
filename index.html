@@ -90,7 +90,7 @@ a{text-decoration:none;color:inherit}
 .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem}
 .nav-logo img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:top}
 .nav-logo-sub{font-size:.68rem;font-weight:500;color:var(--text-lt);display:block;margin-top:-2px}
-.nav-cta{background:var(--coral);color:#fff;font-weight:700;font-size:.85rem;padding:9px 20px;border-radius:50px;transition:background .2s,transform .2s}
+.nav-cta{background:var(--coral);color:#fff;font-weight:700;font-size:.85rem;padding:9px 20px;border-radius:50px;transition:background .2s,transform .2s;white-space:nowrap}
 .nav-cta:hover{background:var(--coral-dk);transform:translateY(-1px)}
 
 /* ═══════════════════════════════════════════
@@ -620,13 +620,13 @@ a{text-decoration:none;color:inherit}
           <div class="stat-pill">🌍 4 categorias culturais</div>
           <div class="stat-pill">🎬 Vídeos explicativos inclusos</div>
           <div class="stat-pill">🎮 Trilha gamificada</div>
-          <div class="stat-pill">📱 Instale direto no celular — sem App Store</div>
+          <div class="stat-pill">📱 Salve na tela inicial — acesse como qualquer app</div>
           <div class="stat-pill">🎁 eBook bônus incluso</div>
           <div class="stat-pill">🥁 <strong>+30</strong> brincadeiras ancestrais</div>
           <div class="stat-pill">🌍 4 categorias culturais</div>
           <div class="stat-pill">🎬 Vídeos explicativos inclusos</div>
           <div class="stat-pill">🎮 Trilha gamificada</div>
-          <div class="stat-pill">📱 Instale direto no celular — sem App Store</div>
+          <div class="stat-pill">📱 Salve na tela inicial — acesse como qualquer app</div>
           <div class="stat-pill">🎁 eBook bônus incluso</div>
         </div>
       </div>
@@ -838,7 +838,7 @@ a{text-decoration:none;color:inherit}
         </div>
         <div class="who-card-body">
           <div class="who-card-quote">"Quero que meus alunos brinquem e aprendam a cultura afro-indígena ao mesmo tempo."</div>
-          <p>Dinâmicas contextualizadas, alinhadas à Lei 10.639, com vídeos explicativos e passo a passo pronto. Menos pesquisa, mais vivência.</p>
+          <p>Dinâmicas contextualizadas, alinhadas às Leis 10.639 e 11.645, com vídeos explicativos e passo a passo pronto. Menos pesquisa, mais vivência.</p>
         </div>
       </div>
       <div class="who-card who-card--facil reveal d1">
@@ -1042,7 +1042,7 @@ a{text-decoration:none;color:inherit}
         <ul class="bonus-list">
           <li><div class="bl-check">✓</div> 📖 eBook "Brincadeiras da Cultura Popular" — imprima, encaderne e leve para a roda</li>
           <li><div class="bl-check">✓</div> 🥁 Aula prática: Samba de Roda no pandeiro</li>
-          <li><div class="bl-check">✓</div> 🥁 Aula prática: Samba Coco no pandeiro</li>
+          <li><div class="bl-check">✓</div> 🥁 Aula prática: Coco de Roda no pandeiro</li>
           <li><div class="bl-check">✓</div> 🔔 Aula prática: Samba no Agogô</li>
           <li><div class="bl-check">✓</div> 👏 Ritmos com palmas, instrumentos percussivos e sem instrumento</li>
           <li><div class="bl-check">✓</div> 🎵 Cantigas de Roda — aprender a cantar e aplicar</li>
@@ -1182,7 +1182,7 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="faq-item reveal">
         <div class="faq-q">Para qual faixa etária funcionam as brincadeiras? <span class="faq-arr">+</span></div>
-        <div class="faq-a">A maioria das dinâmicas inclui variações para funcionar desde a primeira infância (3 anos) até grupos de adultos. O app indica o contexto ideal de cada brincadeira e os vídeos da Prof. Andréa mostram como adaptar para diferentes idades e realidades.</div>
+        <div class="faq-a">A maioria das dinâmicas inclui variações para funcionar desde a infância até grupos de adultos. O app indica o contexto ideal de cada brincadeira e os vídeos da Prof. Andréa mostram como adaptar para diferentes idades e realidades.</div>
       </div>
       <div class="faq-item reveal d1">
         <div class="faq-q">Preciso baixar o app em alguma loja? <span class="faq-arr">+</span></div>
@@ -1351,9 +1351,12 @@ document.querySelectorAll('.faq-item').forEach(item=>{
 // Sticky CTA
 const heroCta=document.querySelector('.hero-cta-row');
 const stickyCta=document.getElementById('sticky-cta');
+const waBtn=document.querySelector('.whatsapp-btn');
 if(heroCta&&stickyCta){
   new IntersectionObserver(([e])=>{
-    stickyCta.style.display=e.isIntersecting?'none':'block';
+    const show=!e.isIntersecting;
+    stickyCta.style.display=show?'block':'none';
+    if(waBtn) waBtn.style.bottom=show?'68px':'24px';
   },{threshold:0}).observe(heroCta);
 }
 
